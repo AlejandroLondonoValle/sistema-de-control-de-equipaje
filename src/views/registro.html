@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/images/file-pencil.svg" type="image/x-icon">
+
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Registro de Equipaje</title>
+</head>
+
+<body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+
+    <div class="w-full max-w-xl p-10 bg-white/5 backdrop-blur-xl rounded-2xl shadow-2xl">
+
+        <h1 class="text-4xl font-bold text-center mb-2">
+            Registro de Equipaje
+        </h1>
+
+        <p class="text-center text-gray-400 mb-10">
+            Aeropuerto Internacional José María Córdova
+        </p>
+
+        <form id="formEquipaje" class="space-y-6">
+            <div>
+                <label class="block text-sm font-semibold mb-2">
+                    Código de Vuelo
+                </label>
+                <input id="codigoVuelo" name="codigoVuelo" type="text" placeholder="Ej: AV123"
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 focus:border-indigo-400 focus:outline-none" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold mb-2">
+                    ID Pasajero
+                </label>
+                <input id="idPasajero" name="idPasajero" type="number" placeholder="Ej: 101"
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 focus:border-indigo-400 focus:outline-none" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold mb-2">
+                    Pesos de Maletas (kg)
+                </label>
+                <input id="maletas" name="maletas" type="text" placeholder="Ej: 12, 24, 5"
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 focus:border-indigo-400 focus:outline-none" />
+
+                <p class="text-sm text-gray-400 mt-2">
+                    Máximo 5 maletas. Cada una no puede superar 32 kg.
+                </p>
+
+            </div>
+
+            <button type="submit"
+                class="w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition">
+                Registrar Equipaje
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/validaciones.js"></script>
+</body>
+
+</html>
