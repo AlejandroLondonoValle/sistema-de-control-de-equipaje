@@ -53,39 +53,39 @@ app.get("/registro", (req, res) => {
 // ..... Ruta Post de Registros .....
 // Recibe los datos del formulario, los valida y los guarda en una constante llamada registro
 app.post("/registro", (req, res) => {
-    
+
     const { codigoVuelo, idPasajero, maletas } = req.body
-    
+
     if (!vuelos.includes(codigoVuelo)) {
         return res.json({ error: "Vuelo no encontrado" })
     }
-    
+
     const pasajero = pasajeros.find(p => p.id === Number(idPasajero))
-    
+
     if (!pasajero) {
         return res.json({ error: "Pasajero no existe" })
     }
-    
+
     const pesos = maletas.split(",").map(x => parseFloat(x.trim()))
-    
+
     if (pesos.length > 5) {
         return res.json({ error: "Máximo 5 maletas permitidas" })
     }
-    
+
     for (let peso of pesos) {
-        
+
         if (isNaN(peso) || peso <= 0) {
             return res.json({ error: "Peso inválido" })
         }
-        
+
         if (peso > 32) {
             return res.json({ error: "Una maleta excede 32kg" })
         }
-        
+
     }
-    
+
     const pesoTotal = pesos.reduce((total, p) => total + p, 0)
-    
+
     const registro = {
         pasajero: pasajero.nombre,
         correo: pasajero.correo,
@@ -93,9 +93,9 @@ app.post("/registro", (req, res) => {
         maletas: pesos.length,
         pesoTotal: pesoTotal.toFixed(2)
     }
-    
+
     registros.push(registro)
-    
+
     res.json({
         success: true,
         pasajero: pasajero.nombre,
@@ -104,7 +104,7 @@ app.post("/registro", (req, res) => {
         maletas: pesos.length,
         pesoTotal: pesoTotal.toFixed(2)
     })
-    
+
 })
 
 

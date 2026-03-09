@@ -90,8 +90,15 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-gray-800 py-6 text-center text-gray-400">
-        Sistema de gestión de vuelos • Aeropuerto José María Córdova • Rionegro, Antioquia
+        <p>Sistema de gestión de vuelos • Aeropuerto José María Córdova • Rionegro, Antioquia</p>
+        <p class="mt-2 text-sm">
+            © <span id="year"></span> - Creado por Luis Alejandro Londoño Valle - McK
+        </p>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 
