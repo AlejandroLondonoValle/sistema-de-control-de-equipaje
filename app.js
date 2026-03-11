@@ -96,6 +96,8 @@ app.post("/registro", (req, res) => {
 
     registros.push(registro)
 
+    console.log("Registros actuales: \n", registros)
+
     res.json({
         success: true,
         pasajero: pasajero.nombre,
@@ -104,6 +106,8 @@ app.post("/registro", (req, res) => {
         maletas: pesos.length,
         pesoTotal: pesoTotal.toFixed(2)
     })
+
+    // res.redirect("/vuelos")
 
 })
 
