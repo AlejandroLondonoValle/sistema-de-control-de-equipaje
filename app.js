@@ -234,6 +234,26 @@ app.get("/vuelos", (req, res) => {
         </div>
 
     </div>
+    <div class="max-w-6xl mx-auto mt-8 flex justify-center gap-4">
+
+        <a href="/registro"
+            class="border border-gray-300 text-gray-700 
+            hover:bg-gray-100 hover:shadow 
+            px-4 py-2 rounded-md text-sm font-medium 
+            transition duration-200">
+            Registrar nuevo vuelo
+        </a>
+
+        <a href="/"
+            class="border border-gray-300 text-gray-700 
+            hover:bg-gray-100 hover:shadow 
+            px-4 py-2 rounded-md text-sm font-medium 
+            transition duration-200">
+            Regresar al inicio
+        </a>
+
+    </div>
+
 
     </body>
     </html>
